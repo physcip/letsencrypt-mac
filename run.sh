@@ -18,7 +18,7 @@ for site_id in $site_ids; do
 		BASEDIR=$(pwd)/$BASEDIR
 	fi
 	
-	WELLKNOWN="$documentRoot/.well-known"
+	WELLKNOWN="$documentRoot/.well-known/acme-challenge"
 	mkdir -p $WELLKNOWN
 	
 	echo -e "WELLKNOWN=$WELLKNOWN; BASEDIR=$BASEDIR" > config.sh
@@ -29,5 +29,5 @@ for site_id in $site_ids; do
 		PARAMS="$PARAMS --domain $dom"
 	done
 	
-	$CMD $PARAMS
+	$CMD $* $PARAMS
 done

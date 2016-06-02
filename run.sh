@@ -21,7 +21,7 @@ for site_id in $site_ids; do
 	WELLKNOWN="$documentRoot/.well-known/acme-challenge"
 	mkdir -p $WELLKNOWN
 	
-	echo -e "WELLKNOWN=$WELLKNOWN; BASEDIR=$BASEDIR" > config.sh
+	echo -e "WELLKNOWN=$WELLKNOWN; BASEDIR=$BASEDIR" > config
 	
 	CMD=$(dirname $0)/letsencrypt.sh/letsencrypt.sh
 	PARAMS="--cron --hook $(dirname $0)/hooks.sh --domain $serverName"

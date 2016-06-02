@@ -4,6 +4,8 @@ import sys
 import os
 import objc
 
+print sys.argv
+
 framework='/Applications/Server.app/Contents/ServerRoot/System/Library/PrivateFrameworks/ServerFoundation.framework'
 objc.loadBundle("ServerFoundation", globals(), framework)
 

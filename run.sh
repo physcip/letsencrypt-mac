@@ -13,7 +13,7 @@ for site_id in $site_ids; do
 	
 	echo $serverName $serverAliases $certificate $documentRoot
 	
-	BASEDIR=$(dirname $0)/letsencrypt.sh
+	BASEDIR=$(dirname $0)/dehydrated
 	if [ "${BASEDIR:0:1}" = "." ]; then
 		BASEDIR=$(pwd)/$BASEDIR
 	fi
@@ -23,7 +23,7 @@ for site_id in $site_ids; do
 	
 	echo -e "WELLKNOWN=$WELLKNOWN; BASEDIR=$BASEDIR" > config
 	
-	CMD=$(dirname $0)/letsencrypt.sh/letsencrypt.sh
+	CMD=$(dirname $0)/dehydrated/dehydrated
 	PARAMS="--cron --hook $(dirname $0)/hooks.sh --domain $serverName"
 	for dom in $serverAliases; do
 		PARAMS="$PARAMS --domain $dom"

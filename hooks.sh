@@ -33,12 +33,7 @@ function deploy_cert {
     
     sleep 15 # it takes a while for Server Admin to pick up the new certificate
     
-    # the following don't work
-    #serveradmin settings -d web:customSites:_array_id:$siteId:sslCertificateIdentifier = "$newcert"
-    #serveradmin settings -d web:customSites:_array_id:$identifier:sslCertificateIdentifier = "$newcert"
-    #serveradmin settings -d web:customSites:_array_id:$siteIdentifier:sslCertificateIdentifier = "$newcert"
-    # so we use the private API to do it directly
-    /usr/bin/python $(dirname $0)/sslcert.py $DOMAIN $newcert
+    certupdate replace -c /etc/certificates/$oldcert.cert.pem -C /etc/certificates/$newcert.cert.pem
     
     serveradmin settings web:customSites | grep -i certificate
 }

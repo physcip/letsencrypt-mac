@@ -21,7 +21,7 @@ for site_id in $site_ids; do
 	WELLKNOWN="$documentRoot/.well-known/acme-challenge"
 	mkdir -p $WELLKNOWN
 	
-	echo -e "WELLKNOWN=$WELLKNOWN; BASEDIR=$BASEDIR" > config
+	echo "WELLKNOWN=$WELLKNOWN; BASEDIR=$BASEDIR" > config
 	
 	CMD=$(dirname $0)/dehydrated/dehydrated
 	PARAMS="--cron --hook $(dirname $0)/hooks.sh --domain $serverName"

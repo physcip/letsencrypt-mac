@@ -20,6 +20,12 @@ for site_id in $site_ids; do
 	
 	WELLKNOWN="$documentRoot/.well-known/acme-challenge"
 	mkdir -p $WELLKNOWN
+	curl -sL http://$serverName/.well-known/acme-challenge | grep -qv '404 Not Found'
+	if [ "$?" != "0" ]; then
+		echo "The acme-challenge directory appears to be inaccessible."
+		echo "Please make sure you don't have a whole-site Redirect or ProxyPass on $serverName."
+		exit 1
+	fi
 	
 	echo "WELLKNOWN=$WELLKNOWN; BASEDIR=$BASEDIR" > config
 	

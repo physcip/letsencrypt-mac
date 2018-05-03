@@ -5,8 +5,8 @@ This repository contains a wrapper script which automatically pulls the host nam
 
 ## Requirements
 This script has been developed and tested on
-- OS X 10.11.4 through 10.11.6
-- Server.app 5.1 through 5.2
+- OS X 10.11.4 through 10.13.3
+- Server.app 5.1 through 5.5
 
 Older versions might work too, but have not been tested.
 

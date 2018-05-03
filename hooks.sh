@@ -42,4 +42,11 @@ function unchanged_cert {
     local DOMAIN="${1}" KEYFILE="${2}" CERTFILE="${3}" FULLCHAINFILE="${4}" CHAINFILE="${5}"
 }
 
-HANDLER=$1; shift; $HANDLER $@
+HANDLER=$1
+shift
+
+case $HANDLER in
+    deploy_challenge|clean_challenge|deploy_cert)
+        $HANDLER $@
+    ;;
+esac

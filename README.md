@@ -5,10 +5,12 @@ This repository contains a wrapper script which automatically pulls the host nam
 
 ## Requirements
 This script has been developed and tested on
-- OS X 10.11.4 through 10.13.3
-- Server.app 5.1 through 5.5
+- OS X 10.11.4 through 10.13.6
+- Server.app 5.1 through 5.6.3
 
 Older versions might work too, but have not been tested.
+
+Newer versions will not work since Apple has removed the web server management tools.
 
 ## Using
 In Server.app, go to the _Websites_ section and create a new web site for each domain name you intend to use.
